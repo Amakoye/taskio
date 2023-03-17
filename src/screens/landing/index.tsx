@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     height: "50%",
-    margin: 30,
+    margin: 20,
   },
   image: {
     width: "100%",
@@ -44,8 +44,7 @@ const styles = StyleSheet.create({
   heading: {
     fontFamily: "varela-round",
     fontSize: 36,
-
-    marginVertical: 10,
+    marginVertical: 5,
   },
   paragraph: {
     fontSize: 20,
@@ -62,7 +61,7 @@ const styles = StyleSheet.create({
   signupBtn: {
     padding: 15,
     borderRadius: 10,
-    marginTop: 10,
+    marginTop: 15,
     backgroundColor: colors.PRIMARY,
   },
   btnText: {
