@@ -1,5 +1,5 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
+import { useNavigation } from "@react-navigation/native";
 import {
   StyleSheet,
   Switch,
@@ -9,16 +9,16 @@ import {
   View,
 } from "react-native";
 import Logo from "/components/Logo";
-import { RootStackParamList } from "/components/Navigation";
 import { colors } from "/theme/colors";
 
-const LoginScreen = ({ navigation }: LoginScreenProps) => {
+const LoginScreen = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
         <TouchableOpacity
           style={styles.backBtnContainer}
-          onPress={() => navigation.navigation("Home")}
+          onPress={() => navigation.navigate("Landing")}
         >
           <Ionicons name="chevron-back-outline" size={18} color={colors.GREY} />
           <Text style={styles.backBtnText}>Back</Text>
@@ -144,14 +144,5 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 });
-
-type LoginScreenNavigationProp = NativeStackScreenProps<
-  RootStackParamList,
-  "Home"
->;
-
-type LoginScreenProps = {
-  navigation: LoginScreenNavigationProp;
-};
 
 export default LoginScreen;

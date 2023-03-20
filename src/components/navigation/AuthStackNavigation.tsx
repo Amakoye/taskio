@@ -2,27 +2,19 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LandingScreen from "/screens/landing";
 import LoginScreen from "/screens/login";
+import { AuthStackParamList } from "/types/navigation";
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator<AuthStackParamList>();
 
-const Navigation = () => {
+const AuthStackNavigation = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        screenOptions={{
-          headerShown: false,
-        }}
-      >
-        <Stack.Screen name="Home" component={LandingScreen} />
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Landing" component={LandingScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
-export type RootStackParamList = {
-  Home: undefined;
-  Login: undefined;
-};
-
-export default Navigation;
+export default AuthStackNavigation;

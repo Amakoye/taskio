@@ -1,8 +1,10 @@
+import { useNavigation } from "@react-navigation/native";
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Logo from "/components/Logo";
 import { colors } from "/theme/colors";
 
 const LandingScreen = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Logo />
@@ -18,7 +20,10 @@ const LandingScreen = () => {
           This smart tool is designed to help you better manage your task
         </Text>
 
-        <TouchableOpacity style={styles.loginBtn}>
+        <TouchableOpacity
+          style={styles.loginBtn}
+          onPress={() => navigation.navigate("Login")}
+        >
           <Text style={styles.btnText}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.signupBtn}>
