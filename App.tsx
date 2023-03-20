@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { StyleSheet, View } from "react-native";
-import LandingScreen from "/screens/landing";
+import Navigation from "/components/Navigation";
 import { LoadFont } from "/theme/font";
 
 export default function App() {
@@ -16,7 +16,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <LandingScreen />
+      <Navigation />
     </View>
   );
 }
