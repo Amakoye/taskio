@@ -95,10 +95,11 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     marginTop: 20,
+    marginBottom: 20,
   },
   input: {
     fontFamily: "varela-round",
-    fontSize: 18,
+    fontSize: 16,
     borderColor: colors.GREY,
     borderBottomWidth: 0.5,
     width: "100%",
@@ -137,7 +138,7 @@ const styles = StyleSheet.create({
   },
   btnText: {
     fontFamily: "varela-round",
-    fontSize: 20,
+    fontSize: 18,
     textAlign: "center",
   },
 });
