@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import Logo from "/components/Logo";
+import AuthHeader from "../AuthHeader";
 import { colors } from "/theme/colors";
 
 const LoginScreen = () => {
@@ -25,16 +25,7 @@ const LoginScreen = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.topContainer}>
-        <TouchableOpacity
-          style={styles.backBtnContainer}
-          onPress={() => navigation.navigate("Landing")}
-        >
-          <Ionicons name="chevron-back-outline" size={18} color={colors.GREY} />
-          <Text style={styles.backBtnText}>Back</Text>
-        </TouchableOpacity>
-        <Logo />
-      </View>
+      <AuthHeader screen="Landing" />
       <View style={styles.mainContainer}>
         <Text style={styles.title}>Welcome Back!</Text>
         <Text style={styles.paragraph}>
@@ -81,22 +72,6 @@ const LoginScreen = () => {
 const styles = StyleSheet.create({
   container: {
     marginTop: 40,
-  },
-  topContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    paddingLeft: 20,
-    paddingRight: 20,
-  },
-  backBtnContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  backBtnText: {
-    fontFamily: "varela-round",
-    fontSize: 18,
-    color: colors.GREY,
   },
   mainContainer: {
     paddingLeft: 20,
