@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingLeft: 14,
+    paddingRight: 14,
   },
   backBtnContainer: {
     flexDirection: "row",
