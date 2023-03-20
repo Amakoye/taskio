@@ -1,5 +1,6 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
 import {
   StyleSheet,
   Switch,
@@ -13,6 +14,15 @@ import { colors } from "/theme/colors";
 
 const LoginScreen = () => {
   const navigation = useNavigation();
+
+  const [state, setState] = useState<LoginScreenState>({
+    isEnabled: false,
+  });
+
+  const toggleSwitch = () => {
+    setState((prev) => ({ ...prev, isEnabled: !prev.isEnabled }));
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.topContainer}>
@@ -38,13 +48,22 @@ const LoginScreen = () => {
         </View>
         <View style={styles.inputContainer}>
           <Ionicons style={styles.inputIcon} name="eye-off-outline" size={18} />
-          <TextInput style={styles.input} placeholder="Password" />
+          <TextInput
+            secureTextEntry
+            style={styles.input}
+            placeholder="Password"
+          />
         </View>
 
         {/* save password */}
         <View style={styles.savePasswordContainer}>
           <Text style={styles.savePasswordText}>Save Password</Text>
-          <Switch style={styles.savePasswordSwitch} />
+          <Switch
+            trackColor={{ true: colors.SUCCESS, false: colors.GREY }}
+            thumbColor={state.isEnabled ? colors.SUCCESS : "#f4f3f4"}
+            onValueChange={toggleSwitch}
+            value={state.isEnabled}
+          />
         </View>
 
         {/* Buttons */}
@@ -144,5 +163,9 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 });
+
+type LoginScreenState = {
+  isEnabled: boolean;
+};
 
 export default LoginScreen;
