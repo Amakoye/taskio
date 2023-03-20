@@ -1,6 +1,7 @@
 export type AuthStackParamList = {
   Landing: undefined;
   Login: undefined;
+  Signup: undefined;
 };
 
 export type AllScreenParamList = {
